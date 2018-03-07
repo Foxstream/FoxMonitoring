@@ -23,6 +23,10 @@ function getCameraList(foxXmlClient) {
     return foxXmlClient.fetchSystemConfiguration().then(obj => _.map(obj.camera, "$"));
 }
 
+function getCameraStates(foxXmlClient) {
+    return foxXmlClient.fetchState().then(obj => _.map(obj.camera, "$"));
+}
+
 function extractDurationFromIndex(index) {
     const simpleIndex = _.get(index, 'singleindex[0].$');
     const now = moment().unix();
@@ -61,6 +65,7 @@ function getTimestampForDayStart(relDayToToday) {
 }
 
 module.exports.getAlarmsForCameras = getAlarmsForCameras;
+module.exports.getCameraStates = getCameraStates;
 module.exports.getTimestampForDayStart = getTimestampForDayStart;
 module.exports.getCameraList = getCameraList;
 module.exports.getDurationWithNoSignal = getDurationWithNoSignal;
