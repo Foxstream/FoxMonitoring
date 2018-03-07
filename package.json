@@ -1,19 +1,24 @@
 {
-  "name": "foxmonitoring",
-  "version": "1.0.0",
-  "description": "Tools to extract diagnostic values from FoxVigi servers",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Foxstream/FoxMonitoring.git"
-  },
-  "author": "Foxstream",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Foxstream/FoxMonitoring/issues"
-  },
-  "homepage": "https://github.com/Foxstream/FoxMonitoring#readme"
+    "name": "foxmonitoring",
+    "version": "1.0.0",
+    "description": "Tools to extract diagnostic values from FoxVigi servers",
+    "main": "index.js",
+    "scripts": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Foxstream/FoxMonitoring.git"
+    },
+    "author": "Foxstream",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Foxstream/FoxMonitoring/issues"
+    },
+    "homepage": "https://github.com/Foxstream/FoxMonitoring#readme",
+    "dependencies": {
+        "lodash": "^4.17.5",
+        "moment": "^2.21.0",
+        "xml2js": "^0.4.19"
+    }
 }
