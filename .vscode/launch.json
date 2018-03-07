@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Lancer le programme",
-            "program": "${workspaceFolder}\\src\\script\\fetchAlarmCount.js"
+            "program": "${workspaceFolder}\\src\\script\\fetchAvgAlarmCount.js"
         }
     ]
 }

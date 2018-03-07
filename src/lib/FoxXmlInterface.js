@@ -76,7 +76,7 @@ function sendMessage(msg) {
     then(x => x[0]);
 }
 
-function fetchCameraConfiguration() {
+function fetchSystemConfiguration() {
     return this.sendMessage(buildBaseMessage("config"));
 }
 
@@ -100,7 +100,7 @@ module.exports = function(addr, port, user, pass) {
     this.user = user;
     this.pass = pass;
 
-    this.fetchCameraConfiguration = fetchCameraConfiguration;
+    this.fetchSystemConfiguration = fetchSystemConfiguration;
     this.fetchIndexes = fetchIndexes;
     this.fetchState = fetchState;
 

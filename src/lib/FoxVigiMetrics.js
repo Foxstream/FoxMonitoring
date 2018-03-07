@@ -18,6 +18,12 @@ function getAlarmsForCameras(foxXmlClient, beginTimestamp, endTimestamp) {
     );
 }
 
+function getCameraList(foxXmlClient) {
+    return foxXmlClient.fetchSystemConfiguration().then(
+        obj => _.map(obj.camera, "$")
+    );
+}
+
 //local timezone
 //if relVal==0, returns midnight
 //if relVal==-1, returns yesterday midnight
@@ -28,3 +34,4 @@ function getTimestampForDayStart(relDayToToday) {
 
 module.exports.getAlarmsForCameras = getAlarmsForCameras;
 module.exports.getTimestampForDayStart = getTimestampForDayStart;
+module.exports.getCameraList = getCameraList;

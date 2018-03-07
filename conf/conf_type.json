@@ -5,7 +5,7 @@
         "User": "",
         "Password": ""
     },
-    "fetchAlarmCount": {
+    "fetchMaxAlarmCount": {
         "cameras": {
             "2": false
         },

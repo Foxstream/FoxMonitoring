@@ -8,7 +8,7 @@ var fx = Config.getFoxXmlInterface();
 var conf = Config.getScriptConfig();
 
 function shouldCheckCamera(idxList, camId) {
-    return conf.cameras[camId + ""] !== false;
+    return !conf || !conf.cameras || conf.cameras[camId + ""] !== false;
 }
 
 function computeMaxAlarmPerCamera(alarmsPerCamera) {
