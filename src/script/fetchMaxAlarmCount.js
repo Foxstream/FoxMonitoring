@@ -1,4 +1,7 @@
 /*jshint esversion: 6 */
+
+//return max(alarmCountForYesterday for each camera)
+
 var Config = require("../lib/FoxMonitorConfig");
 var FoxMetrics = require("../lib/FoxVigiMetrics");
 var Utils = require("../lib/FoxMonitorUtil");
