@@ -1,19 +1,24 @@
 /*jshint esversion: 6 */
-var FoxXml = require("../lib/FoxXmlInterface");
+var Config = require("../lib/FoxMonitorConfig");
 var FoxMetrics = require("../lib/FoxVigiMetrics");
+var Utils = require("../lib/FoxMonitorUtil");
 var _ = require("lodash");
 
-var fx = new FoxXml("192.168.0.118", 4000, "a", "a");
+var fx = Config.getFoxXmlInterface();
+var conf = Config.getScriptConfig();
+
+function shouldCheckCamera(idxList, camId) {
+    return conf.cameras[camId + ""] !== false;
+}
+
+function computeMaxAlarmPerCamera(alarmsPerCamera) {
+    return alarmsPerCamera ? _(alarmsPerCamera).filter(shouldCheckCamera).mapValues("length").values().max() : 0;
+}
 
 function printMax(alarmsPerCamera) {
-    if (!alarmsPerCamera)
-        console.log("0");
-    else {
-
-        console.log(_(alarmsPerCamera).mapValues("length").values().max());
-    }
+    Utils.PrintValueAndExit(computeMaxAlarmPerCamera(alarmsPerCamera), conf.threshold);
 }
 
 FoxMetrics.getAlarmsForCameras(fx, FoxMetrics.getTimestampForDayStart(-1), FoxMetrics.getTimestampForDayStart(0))
     .then(printMax)
-    .catch(err => console.error(err));
+    .catch(Utils.ErrorHandler);

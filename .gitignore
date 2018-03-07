@@ -58,3 +58,5 @@ typings/
 .env
 
 /bin
+#local configuration
+conf/conf.json

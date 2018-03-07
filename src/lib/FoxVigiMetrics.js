@@ -11,6 +11,7 @@ function groupIndexByCamera(indexList) {
     value();
 }
 
+//return index list grouped by cameras
 function getAlarmsForCameras(foxXmlClient, beginTimestamp, endTimestamp) {
     return foxXmlClient.fetchIndexes(beginTimestamp, endTimestamp, AlarmIndexType).then(
         obj => groupIndexByCamera(obj.singleindex)

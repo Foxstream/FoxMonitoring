@@ -1,0 +1,14 @@
+{
+    "FoxXml": {
+        "Address": "127.0.0.1",
+        "Port": 4000,
+        "User": "",
+        "Password": ""
+    },
+    "fetchAlarmCount": {
+        "cameras": {
+            "2": false
+        },
+        "threshold": 0
+    }
+}
