@@ -80,6 +80,16 @@ function fetchSystemConfiguration() {
     return this.sendMessage(buildBaseMessage("config"));
 }
 
+function fetchLastIndex(camId, indexType) {
+    var queryElement = {
+        camid: camId,
+        lastnb: 1,
+        indextype: indexType,
+    };
+
+    return this.sendMessage(buildBaseMessage("index", queryElement));
+}
+
 function fetchIndexes(beginTimestamp, endTimestamp, indexType) {
     var queryElement = {
         startdate: beginTimestamp,
@@ -102,6 +112,7 @@ module.exports = function(addr, port, user, pass) {
 
     this.fetchSystemConfiguration = fetchSystemConfiguration;
     this.fetchIndexes = fetchIndexes;
+    this.fetchLastIndex = fetchLastIndex;
     this.fetchState = fetchState;
 
     //private functions

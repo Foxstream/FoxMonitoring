@@ -17,7 +17,8 @@ function computeTotalAlarms(alarmsPerCamera) {
 
 function computeAvgAlarmCount(totalAlarmCount) {
     return FoxMetrics.getCameraList(fx).then(
-        camList => totalAlarmCount / _(camList).map("camid").filter(shouldCheckCamera.bind(null, null)).size());
+        camList => totalAlarmCount / _(camList).map("camid").filter(shouldCheckCamera.bind(null, null)).size()
+    );
 }
 
 FoxMetrics.getAlarmsForCameras(fx, FoxMetrics.getTimestampForDayStart(-1), FoxMetrics.getTimestampForDayStart(0))
