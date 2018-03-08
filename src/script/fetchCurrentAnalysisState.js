@@ -15,7 +15,7 @@ function shouldCheckCamera(camera) {
 }
 
 function printIfAtAnalysisEnabled(cameraStates) {
-    Utils.PrintValueAndExit(_(cameraStates).filter(shouldCheckCamera).some(x => x.analysis === 'on'));
+    Utils.PrintValueAndExit(_(cameraStates).filter(shouldCheckCamera).some(x => x.analysis === 'on') ? 1: 0);
 }
 
 FoxMetrics.getCameraStates(fx)
