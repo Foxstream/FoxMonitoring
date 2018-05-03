@@ -1,4 +1,5 @@
-#echo off
+@echo off
+echo Updating monioring tools...
 SET INSTALL_FOLDER=C:\Foxstream\
 SET MONITORING_FOLDER=%INSTALL_FOLDER%\FoxMonitoring
 
